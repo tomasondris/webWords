@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:f="http://java.sun.com/jsf/core" 
+    xmlns:p="http://primefaces.org/ui">  
+    <h:head>  
+ 
+    </h:head>  
+      
+    <h:body>  
+       <h:form>  
+
+           <p:panel header="Zadajte preklad slovíčka:" layout="grid">    
+				<p:selectOneMenu value="#{examView.inputLectionValue}" style="width:190px">
+				      <f:selectItem itemLabel="Vyberte si lekciu" itemValue="" />
+				      <f:selectItem itemLabel="Lekcia 1" itemValue="1" />
+				      <f:selectItem itemLabel="Lekcia 2" itemValue="2" />
+	           </p:selectOneMenu>
+	           
+	           <br />
+	           
+               <p:keyboard value="#{examView.inputWordValue}" showMode="button" buttonImageOnly="true" buttonImage="resources/img/keyboard-32.png" layout="custom" layoutTemplate="Ää-back,Öö-clear,Üü-close,ß" />  
+			   
+			   <br />
+	           
+	           <p:commandButton value="ok" action="#{examView.checkWordAction()}" />
+	           <p:commandButton value="neviem" action="#{examView.generateNextWordAction()}" />
+           </p:panel>
+			
+       </h:form>
+    </h:body>  
+</html>
